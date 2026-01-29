@@ -1,9 +1,3 @@
-Markdown formatting is likely the culprit! GitHub’s rendering engine (and most Markdown parsers) ignores single line breaks. To fix the "merging lines" issue, you need to use specific Markdown syntax for lists or hard breaks.
-
-Here is a professionally formatted version of your README content that you can copy and paste directly. I’ve optimized it for scannability and structure.
-
----
-
 # FarmLokal – Backend Assignment
 
 FarmLokal Backend is a robust service designed to demonstrate high-performance API design, secure authentication, and resilient integration patterns.
@@ -67,13 +61,3 @@ The `/products` endpoint is optimized for high traffic through:
 * **Local Dev:** Redis is optional for local setups but mandatory for production performance.
 
 ---
-
-### Why your lines were merging:
-
-In Markdown, you must do one of the following to start a new line:
-
-1. **Use an asterisk (`*`) or dash (`-`)** at the start of the line to create a bullet point.
-2. **Leave a full empty line** between paragraphs.
-3. **End a line with two spaces** before hitting enter (this creates a "soft" line break).
-
-Would you like me to help you write a **"Getting Started"** section with the specific commands to run this project locally?
