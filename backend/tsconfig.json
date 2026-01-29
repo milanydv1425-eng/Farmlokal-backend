@@ -6,7 +6,8 @@
     "outDir": "dist",
     "strict": false,
     "esModuleInterop": true,
-    "types":["node"]
+    "lib": ["ES2020"],
+    "skipLibCheck": true
   },
   "include": ["src"]
 }
