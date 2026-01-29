@@ -1,92 +1,79 @@
-FarmLokal – Backend Assignment 
+Markdown formatting is likely the culprit! GitHub’s rendering engine (and most Markdown parsers) ignores single line breaks. To fix the "merging lines" issue, you need to use specific Markdown syntax for lists or hard breaks.
 
-FarmLokal Backend is a backend service built as part of the FarmLokal take-home assignment. It focuses on backend performance, API design, caching, and real-world reliability patterns.
-
----
-
-Purpose:
-
-FarmLokal is a hyperlocal marketplace that connects households directly with local farmers and producers.
-This backend service is designed to support fast product listing, secure token handling, and external service integrations.
-
-The goal of this assignment was to demonstrate backend engineering fundamentals rather than frontend or UI development.
+Here is a professionally formatted version of your README content that you can copy and paste directly. I’ve optimized it for scannability and structure.
 
 ---
 
-Features:
+# FarmLokal – Backend Assignment
 
-• Product listing API with pagination, sorting, and filtering
-• Performance-optimized database queries using MySQL indexes
-• OAuth2 client-credentials based authentication flow
-• Redis-based access token caching
-• External API integration with timeout handling
-• Webhook endpoint for receiving async callbacks
-• Modular and clean backend architecture
-• Production-ready deployment setup
+FarmLokal Backend is a robust service designed to demonstrate high-performance API design, secure authentication, and resilient integration patterns.
 
----
+## 🚀 Purpose
 
-Technology Stack:
+FarmLokal is a hyperlocal marketplace connecting households directly with local farmers. This service supports fast product discovery, secure token management, and reliable external service integrations.
 
-Backend:
-Node.js, TypeScript, Express.js, MySQL (Prisma ORM), Redis, Axios
+> **Note:** This project focuses on backend engineering fundamentals; frontend components are intentionally excluded.
 
 ---
 
-Deployment:
-Backend deployed on Render
-Database hosted on managed MySQL
-Redis provided via managed Redis service
+## ✨ Features
+
+* **Product Listing API:** High-performance discovery with pagination, sorting, and filtering.
+* **Optimized Database:** MySQL indexing and efficient query design.
+* **Secure Auth:** OAuth2 client-credentials flow.
+* **Redis Caching:** Token and data caching to minimize latency.
+* **Resilient Integration:** External API handling with strict timeout policies.
+* **Idempotent Webhooks:** Securely handle asynchronous callbacks and duplicate requests.
+* **Clean Architecture:** Modular, TypeScript-based codebase.
 
 ---
 
-API Overview:
+## 🛠 Technology Stack
 
-GET /products
-Returns a paginated list of products with sorting and filtering support.
-
-GET /auth/token
-Fetches an OAuth2 access token and caches it in Redis to avoid repeated token requests.
-
-GET /external/sync
-Calls a mock external API with timeout handling.
-
-POST /external/webhook
-Receives callback events and is designed to safely handle duplicate requests.
+* **Runtime:** Node.js (TypeScript)
+* **Framework:** Express.js
+* **Database:** MySQL via Prisma ORM
+* **Caching:** Redis
+* **HTTP Client:** Axios
+* **Hosting:** Render (Backend), Managed MySQL & Redis
 
 ---
 
-Performance & Caching:
+## 🛰 API Overview
 
-The product listing API is treated as the most performance-critical endpoint.
-
-• Indexed database columns for frequent queries
-• Cursor-based pagination to avoid offset scan penalties
-• Minimal database queries per request
-• Redis caching for authentication tokens and frequently accessed data
-
-With Redis enabled in production, the backend is designed to meet the required performance targets.
+| Endpoint | Method | Description |
+| --- | --- | --- |
+| `/products` | `GET` | Paginated product list with filters. |
+| `/auth/token` | `GET` | Fetches/caches OAuth2 access tokens. |
+| `/external/sync` | `GET` | Syncs data via external API with timeout logic. |
+| `/external/webhook` | `POST` | Processes idempotent async callbacks. |
 
 ---
 
-External API Handling:
+## ⚡ Performance & Caching
 
-Public mock APIs are used for external integrations since the focus is on integration handling rather than real data accuracy.
+The `/products` endpoint is optimized for high traffic through:
 
-Webhook handling is designed to be idempotent to safely process duplicate events.
-
----
-
-Notes & Trade-offs:
-
-• Redis is optional during local development and fully enabled in production
-• External APIs are mocked to keep the focus on backend behavior
-• Frontend is intentionally excluded to stay aligned with the assignment scope
+* **Indexing:** Database columns are indexed for frequent query parameters.
+* **Cursor Pagination:** Prevents "offset scan" performance degradation.
+* **Redis Integration:** Production environments leverage Redis to eliminate redundant auth requests and database hits.
 
 ---
 
-Deployment:
+## 📝 Trade-offs & Notes
 
-The backend is deployed on Render using managed database and Redis services.
-All required environment variables are configured on the deployment platform.
+* **Mock APIs:** Used for external integrations to focus on logic rather than data accuracy.
+* **Idempotency:** Webhook handling is built to be safe against duplicate events.
+* **Local Dev:** Redis is optional for local setups but mandatory for production performance.
 
+---
+
+### Why your lines were merging:
+
+In Markdown, you must do one of the following to start a new line:
+
+1. **Use an asterisk (`*`) or dash (`-`)** at the start of the line to create a bullet point.
+2. **Leave a full empty line** between paragraphs.
+3. **End a line with two spaces** before hitting enter (this creates a "soft" line break).
+
+Would you like me to help you write a **"Getting Started"** section with the specific commands to run this project locally?
